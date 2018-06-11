@@ -42,7 +42,7 @@ function dealInfo() {
                 name: data.newestFilms.eq(i).find('p.tt').find('a').attr('title'),
                 url: url + data.newestFilms.eq(i).find('p.tt').find('a').attr('href').substring(1),
                 imagePath: url + data.newestFilms.eq(i).find('.litpic').find('img').attr('src').substring(1),
-                grade: data.newestFilms.eq(i).find('p.rt').text()
+                score: data.newestFilms.eq(i).find('p.rt').find('strong').text() + '.' + data.newestFilms.eq(i).find('p.rt').find('em.fm').text() || '0'
             });
         }
     }
@@ -52,7 +52,7 @@ function dealInfo() {
             name: value.name,
             url: value.url,
             imagePath: value.imagePath,
-            score: value.grade
+            score: value.score
         });
 
         Film.isExist(value.name, function(err, doc) {

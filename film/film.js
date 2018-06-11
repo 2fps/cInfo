@@ -46,7 +46,7 @@ function startSendMail() {
                 ht += '<a target="_blank" style="display: inline-block;" href="' + docs[i].url + '">';
                 ht += '<img style="display: block;" src="' + docs[i].imagePath + '" />';
                 ht += '<span style="display: block;">' + docs[i].name + '</span>';
-                ht += '<span style="display: block;">' + docs[i].grade + '</span>';
+                ht += '<span style="display: block;">' + docs[i].score + '</span>';
                 ht += '</a>';
                 ht += '</div>';
             }

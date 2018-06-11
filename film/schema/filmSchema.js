@@ -6,7 +6,7 @@ const filmSchema = new Schema({
     url: String,            // 电影链接路径
     imagePath: String,      // 电影图片url
     updateDate: Date,     // 啥时候更新的
-    score: Number,          // doupan评分
+    score: String,          // doupan评分
     clicks: {               // 点击次数
         type: Number,
         default: 0
@@ -21,6 +21,7 @@ filmSchema.methods.saveFilm = function(fn) {
         name: this.name,
         url: this.url,
         imagePath: this.imagePath,
+        score: this.score,
         updateDate: new Date(),
         clicks: this.clicks
     }, fn);
